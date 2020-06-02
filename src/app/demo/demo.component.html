@@ -1,0 +1,44 @@
+<h1>Demo - Angular</h1>
+
+<h2>Usando ngModel</h2>
+<label for="txtTitle">Title: </label>
+<input type="text" id="txtTitle" [(ngModel)]="title" />
+{{ title }}
+
+<h3>Usando ngSwitch</h3>
+<p>Si escribes Jorgi, Itati o Ginnio en el input.</p>
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'Jorgi'">Este es Jorgi</p>
+  <p *ngSwitchCase="'Itati'">Este es Itati</p>
+  <p *ngSwitchCase="'Ginnio'">Este es Ginnio</p>
+  <p *ngSwitchDefault>Este no es nadie</p>
+</div>
+
+<div *ngIf="title === 'Nicolas'">
+  Nicolas es el profesor del curso de Angular en Platzi.
+</div>
+
+<hr />
+
+<h2>Usando Pipes y ngModel</h2>
+<p>
+  Ingresar un valor en el input, pasa por un pipe(tuberia) que lo transforma en
+  un exponencial.
+</p>
+<input type="text" [(ngModel)]="power" />
+{{ power | exponential | exponential }}
+
+
+<h2>Lista utilizando ngFor</h2>
+
+<button (click)="addItem()">Add item</button>
+
+
+
+<ul>
+  <li *ngIf="items.length === 0">La lista se encuentra vacia</li>
+  <li *ngFor="let name of items; index as i">
+    {{ name }} {{ i }}
+    <button (click)="deleteItem(i)">Delete</button>
+  </li>
+</ul>
