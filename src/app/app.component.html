@@ -1,13 +1,11 @@
 <input type="text" [(ngModel)]="title" />
 {{ title }}
 
-<app-product></app-product>
-
 <div [ngSwitch]="title">
   <p *ngSwitchCase="'Jorgi'">Este es Jorgi</p>
   <p *ngSwitchCase="'Itati'">Este es Itati</p>
   <p *ngSwitchCase="'Ginnio'">Este es Ginnio</p>
-  <p *ngSwitchDefault>Este no es nadie </p>
+  <p *ngSwitchDefault>Este no es nadie</p>
 </div>
 
 <button (click)="addItem()">Add item</button>
@@ -24,9 +22,10 @@
   </li>
 </ul>
 
+<h1>Productos mostrados por el componente + *ngFor</h1>
 <div *ngFor="let product of products">
-  {{ product.id }}
-  {{ product.description }}  
-  <img [src]="product.image" alt="" />
-  {{ "---------------------------------------------"}}
+  <app-product
+    (productClicked)="clickProduct($event)"
+    [product]="product"
+  ></app-product>
 </div>
