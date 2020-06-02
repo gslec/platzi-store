@@ -1,3 +1,5 @@
+<h1>Practicando Angular</h1>
+
 <input type="text" [(ngModel)]="title" />
 {{ title }}
 
@@ -22,9 +24,10 @@
   </li>
 </ul>
 
-<h1>Productos mostrados por el componente + *ngFor</h1>
-<div *ngFor="let product of products">
+<h1>Sitio de Web de Ecommerce usando Angular</h1>
+<div class="product-grid">
   <app-product
+    *ngFor="let product of products"
     (productClicked)="clickProduct($event)"
     [product]="product"
   ></app-product>

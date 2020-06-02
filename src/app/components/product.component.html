@@ -1,5 +1,7 @@
-<h1>{{ product.title }}</h1>
-{{ product.id }}
-{{ product.description }}
+<h1>{{ product.title | uppercase }}</h1>
+<strong>{{ product.price | currency }}</strong>
+<p>{{ today | date: "HH:mm" }}</p>
+<p>{{ product.description | slice: 0:10 }}</p>
 <img [src]="product.image" alt="" />
-<button (click)="addCart()" >Agregar al carrito</button>
+<button (click)="addCart()">Agregar al carrito</button>
+
