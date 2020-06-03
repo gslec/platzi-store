@@ -1,10 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
-import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component';
-import { DemoComponent } from './demo/demo.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+
 import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
@@ -22,26 +18,22 @@ const routes: Routes = [
         loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       },
       {
-        path: 'products/:id',
-        component: ProductDetailComponent
-      },
-      {
         path: 'products',
-        component: ProductsComponent
+        loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
       },
       {
         path: 'contact',
-        component: ContactComponent
+        loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
       }
     ]
   },
   {
     path: 'demo',
-    component: DemoComponent
+    loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
   },
   {
     path: '**',
-    component: NotFoundComponent
+    loadChildren: () => import('./not-found/not-found.module').then(m => m.NotFoundModule)
   },
 ];
 

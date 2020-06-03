@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, Input, EventEmitter, OnDestroy } from '@angular/core';
-import { Product } from '../product.model';
+import { Product } from '../product/product.model';
 
 @Component({
   selector: 'app-products',
@@ -59,7 +59,7 @@ export class ProductsComponent implements /*OnChanges,*/ OnInit, OnDestroy {
   today = new Date();
 
   constructor() {
-      console.log('1. Constructor');
+    console.log('1. Constructor');
   }
 
   // ngOnChanges(changes: SimpleChanges) {
@@ -68,21 +68,21 @@ export class ProductsComponent implements /*OnChanges,*/ OnInit, OnDestroy {
   // }
 
   ngOnInit(): void {
-      console.log('3. ngOnInit');
+    console.log('3. ngOnInit');
 
   }
 
   ngDoCheck() {
-      console.log('4. doCheck');
+    console.log('4. doCheck');
   }
 
   addCart() {
-      console.log('Añadir al carrito');
-      this.productClicked.emit(this.product.id);
+    console.log('Añadir al carrito');
+    this.productClicked.emit(this.product.id);
   }
 
   ngOnDestroy() {
-      console.log('onDestroy');
+    console.log('onDestroy');
   }
 
   clickProduct(id: number) {
