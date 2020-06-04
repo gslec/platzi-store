@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NotFoundComponent } from './components/not-found.component';
 import { SharedModule } from '../shared/shared.module';
+
+
+import { NotFoundComponent } from './components/not-found.component';
 import { PageNotFoundRoutingModule } from './not-found-routing';
+import { MaterialModule } from '../material/material.module';
+
 
 
 
@@ -14,7 +18,8 @@ import { PageNotFoundRoutingModule } from './not-found-routing';
   imports: [
     CommonModule,
     SharedModule,
-    PageNotFoundRoutingModule
+    PageNotFoundRoutingModule,
+    MaterialModule
   ]
 })
 export class NotFoundModule { }
