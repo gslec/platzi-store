@@ -22,4 +22,17 @@ export class ProductsService {
   getProduct(id: string) {
     return this.http.get<Product>(`${environment.URL_API}${id}`);
   }
+
+  createProduct(product: Product) {
+    console.log(product);
+    return this.http.post(environment.URL_API, product);
+  }
+
+  updateProduct(id: string, changes: Partial<Product>) {
+    return this.http.put(`${environment.URL_API}${id}`, changes);
+  }
+
+  deleteProduct(id: string) {
+    return this.http.delete(`${environment.URL_API}${id}`);
+  }
 }
