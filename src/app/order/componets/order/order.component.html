@@ -1,0 +1,13 @@
+<mat-horizontal-stepper>
+  <mat-step>
+    <ul>
+      <li *ngFor="let product of products$ | async">
+        {{ product.title }}
+      </li>
+    </ul>
+  </mat-step>
+
+  <mat-step>
+      MUERETE!
+  </mat-step>
+</mat-horizontal-stepper>

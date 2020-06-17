@@ -12,6 +12,7 @@ import { MaterialModule } from '../material/material.module';
 
 
 
+
 @NgModule({
   declarations: [
     FooterComponent,
@@ -28,7 +29,7 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class SharedModule { }

@@ -1,0 +1,73 @@
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Producto</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="id"
+              placeholder="id"
+              type="text"
+              ng-disabled="true"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="title"
+              placeholder="title"
+              type="text"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input
+              matInput
+              formControlName="price"
+              placeholder="price"
+              type="number"
+            />
+          </mat-form-field>
+          <div *ngIf="priceField.errors && priceField.dirty">
+            <p *ngIf="priceField.hasError('price_invalid')">
+              Precio limite: $10.000
+            </p>
+            <p *ngIf="priceField.hasError('required')">
+              Este campo es requerido
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <textarea
+              matInput
+              formControlName="description"
+              placeholder="description"
+              type="text"
+            ></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [disabled]="form.invalid" mat-raised-button type="submit">
+        Guardar
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</form>
