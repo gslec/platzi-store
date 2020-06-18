@@ -3,7 +3,6 @@ import { Product } from '../../../core/models/product.model';
 import { CartService } from 'src/app/core/services/cart.service';
 import { Observable } from 'rxjs';
 
-
 @Component({
   selector: 'app-order',
   templateUrl: './order.component.html',

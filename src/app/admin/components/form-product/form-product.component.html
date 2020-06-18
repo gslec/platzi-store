@@ -15,12 +15,7 @@
       <div class="row">
         <div class="col-xs">
           <mat-form-field>
-            <input
-              matInput
-              formControlName="title"
-              placeholder="title"
-              type="text"
-            />
+            <input matInput formControlName="title" placeholder="title" type="text" />
           </mat-form-field>
         </div>
       </div>
@@ -28,12 +23,7 @@
       <div class="row">
         <div class="col-xs">
           <mat-form-field>
-            <input
-              matInput
-              formControlName="price"
-              placeholder="price"
-              type="number"
-            />
+            <input matInput formControlName="price" placeholder="price" type="number" />
           </mat-form-field>
           <div *ngIf="priceField.errors && priceField.dirty">
             <p *ngIf="priceField.hasError('price_invalid')">
@@ -48,15 +38,20 @@
       <div class="row">
         <div class="col-xs">
           <mat-form-field>
-            <textarea
-              matInput
-              formControlName="description"
-              placeholder="description"
-              type="text"
-            ></textarea>
+            <textarea matInput formControlName="description" placeholder="description" type="text"></textarea>
           </mat-form-field>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <img *ngIf="(image$ | async) as image" [src]="image">
+          <input type="file" (change)="uploadFile($event)">
+
+        </div>
+      </div>
+
+
     </mat-card-content>
     <mat-card-actions>
       <button [disabled]="form.invalid" mat-raised-button type="submit">

@@ -5,9 +5,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ExponentialPipe } from './pipes/exponential/exponential.pipe';
 import { HighlightDirective } from './directives/highlight/highlight.directive';
-
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
+import { GroupByPipe } from './pipes/groupby/groupby.pipe';
 
 
 
@@ -18,13 +18,15 @@ import { MaterialModule } from '../material/material.module';
     FooterComponent,
     HeaderComponent,
     ExponentialPipe,
-    HighlightDirective
+    HighlightDirective,
+    GroupByPipe
   ],
   exports: [
     FooterComponent,
     HeaderComponent,
     ExponentialPipe,
-    HighlightDirective
+    HighlightDirective,
+    GroupByPipe
   ],
   imports: [
     CommonModule,
